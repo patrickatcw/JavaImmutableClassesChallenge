@@ -15,8 +15,16 @@ public class Location {
     public Location(int locationID, String desription, Map<String, Integer> exits) {
         this.locationID = locationID;
         this.desription = desription;
-        this.exits = new HashMap<String, Integer>(exits);
+        //step 2 put a test here, and don't need code in line 24, then run in main for step 3
+
+        if(exits != null) {
+            this.exits = new HashMap<String, Integer>(exits);
+        } else {
+            this.exits = new HashMap<String, Integer>();
+        }
+        //this.exits = new HashMap<String, Integer>(exits);
         //back to main to test run
+
 
         this.exits.put("Q", 0); //ability to quit out of a particular location
     }
