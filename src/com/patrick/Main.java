@@ -11,6 +11,14 @@ challenge;
 that would allow the program to compile but crash at run time,
 identify and modify code to fix
  */
+/*
+-identified problem;
+the constructor will crash with a null pointer exception at
+line 18 in location class, this.exits = new HashMap<String, Integer>(exits);,
+if null is passed instead of a map.
+
+to see this go to line 34 here and change tempExit to null;
+ */
 public class Main {
 
     //initializing hashmap
@@ -23,7 +31,11 @@ public class Main {
 
         //temporary map that are going be our exits, fixes errors
         Map<String, Integer> tempExit = new HashMap<String, Integer>();
-        locations.put(0, new Location(0, "You are sitting in front of a computer learning Java",tempExit));
+        //locations.put(0, new Location(0, "You are sitting in front of a computer learning Java",tempExit));
+        //step 1 for challenge, demonstration of change in code for crash
+        locations.put(0, new Location(0, "You are sitting in front of a computer learning Java", null));
+        //so the solution in location class step 2
+
         tempExit.put("W", 2); //changed through edit find replace
         tempExit.put("E", 3);
         tempExit.put("S", 4);
